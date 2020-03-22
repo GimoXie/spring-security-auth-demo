@@ -17,6 +17,7 @@
         <module>server-authorization</module>
         <module>repository</module>
         <module>server-resource</module>
+        <module>client</module>
     </modules>
 
     <dependencyManagement>
@@ -29,6 +30,11 @@
             <dependency>
                 <groupId>io.gimo</groupId>
                 <artifactId>server-resource</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.gimo</groupId>
+                <artifactId>client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
