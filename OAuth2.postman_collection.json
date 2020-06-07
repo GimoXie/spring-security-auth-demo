@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "d8550ac3-a7c1-4b44-893d-67e01a7afde8",
+		"name": "OAuth2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authorization_code方式获取token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "baidu",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "baidu",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/oauth/token?grant_type=authorization_code&code=XMcMGl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						},
+						{
+							"key": "code",
+							"value": "XMcMGl"
+						}
+					]
+				},
+				"description": "授权码验证模式下首先访问http://127.0.0.1:8080/oauth/authorize?client_id=baidu&response_type=code，从连接中获取code\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "通过token请求资源服务器",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/client?clientId=baidu&access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTE1NDI0OTAsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV8iXSwianRpIjoiNzM4N2Q1NTgtNTQxYS00YzdhLThkOWMtNTI3OTk3OWViNjNiIiwiY2xpZW50X2lkIjoiYmFpZHUiLCJzY29wZSI6WyJyZWFkIiwic2VhcmNoIl19.LzIXUpYqSiKYzDEJTyrFCuNY5eH7UJYP__QeJKw7Phc9IaDFIRikZnOaVuBhQn630Ppm2YJ3GkJ5bm5p3BMXTkhE2LubC_iIOY5kWW__E6LYz-TFdjHHyLQZHfV4C7gsPczdP7DctrWP19oyQ3tWL8JVG-ZTPkmGCzgzhe1ya6eOfJJRu2KaiQDXOvYB1RCE_7SPZx4wyKE7LqSR3k0z5c38m63uFynUrk8EXr1gvkCYng8vC4TZe3fViXhUre1Oeg2aEg9ATX9lkXGUtJSnL3xdE8FFYgu3Zza5qHEb8aLRyvroGu8NRnQbS218ZBjt8i7KS3NiD-SAvbblBGKvKA",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"client"
+					],
+					"query": [
+						{
+							"key": "clientId",
+							"value": "baidu"
+						},
+						{
+							"key": "access_token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTE1NDI0OTAsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV8iXSwianRpIjoiNzM4N2Q1NTgtNTQxYS00YzdhLThkOWMtNTI3OTk3OWViNjNiIiwiY2xpZW50X2lkIjoiYmFpZHUiLCJzY29wZSI6WyJyZWFkIiwic2VhcmNoIl19.LzIXUpYqSiKYzDEJTyrFCuNY5eH7UJYP__QeJKw7Phc9IaDFIRikZnOaVuBhQn630Ppm2YJ3GkJ5bm5p3BMXTkhE2LubC_iIOY5kWW__E6LYz-TFdjHHyLQZHfV4C7gsPczdP7DctrWP19oyQ3tWL8JVG-ZTPkmGCzgzhe1ya6eOfJJRu2KaiQDXOvYB1RCE_7SPZx4wyKE7LqSR3k0z5c38m63uFynUrk8EXr1gvkCYng8vC4TZe3fViXhUre1Oeg2aEg9ATX9lkXGUtJSnL3xdE8FFYgu3Zza5qHEb8aLRyvroGu8NRnQbS218ZBjt8i7KS3NiD-SAvbblBGKvKA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "password方式获取token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "baidu",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "baidu",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/oauth/token?grant_type=password&username=admin&password=admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "admin"
+						},
+						{
+							"key": "password",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "client_credentials获取token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "baidu",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "baidu",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/oauth/token?grant_type=client_credentials&scope=read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						},
+						{
+							"key": "scope",
+							"value": "read"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
